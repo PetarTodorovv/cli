@@ -234,7 +234,6 @@ func (c *command) startMinikube() error {
 	startCmd := []string{"start",
 		"--memory", c.opts.Memory,
 		"--cpus", c.opts.CPUS,
-		"--extra-config=apiserver.authorization-mode=RBAC",
 		"--extra-config=apiserver.cors-allowed-origins='http://*'",
 		"--extra-config=apiserver.enable-admission-plugins=DefaultStorageClass,LimitRanger,MutatingAdmissionWebhook,NamespaceExists,NamespaceLifecycle,ResourceQuota,ServiceAccount,ValidatingAdmissionWebhook",
 		"--extra-config=apiserver.service-account-signing-key-file=/var/lib/minikube/certs/sa.key",
