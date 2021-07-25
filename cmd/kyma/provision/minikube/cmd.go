@@ -237,7 +237,8 @@ func (c *command) startMinikube() error {
 		"--extra-config=apiserver.cors-allowed-origins='http://*'",
 		"--extra-config=apiserver.enable-admission-plugins=DefaultStorageClass,LimitRanger,MutatingAdmissionWebhook,NamespaceExists,NamespaceLifecycle,ResourceQuota,ServiceAccount,ValidatingAdmissionWebhook",
 		"--extra-config=apiserver.service-account-signing-key-file=/var/lib/minikube/certs/sa.key",
-		"--extra-config=apiserver.service-account-issuer=kubernetes/serviceaccount",
+		"--extra-config=apiserver.service-account-issuer=https://localhost:8443",
+		"--extra-config=apiserver.service-account-jwks-uri=https://localhost:8443/openid/v1/jwks"	     
 		"--extra-config=apiserver.service-account-api-audiences=api",
 		"--kubernetes-version=v" + c.opts.KubernetesVersion,
 		"--vm-driver", c.opts.VMDriver,
