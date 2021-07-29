@@ -243,7 +243,8 @@ func (c *command) startMinikube() error {
 		"--kubernetes-version=v" + c.opts.KubernetesVersion,
 		"--vm-driver", c.opts.VMDriver,
 		"--disk-size", c.opts.DiskSize,
-		"--feature-gates=ServiceAccountIssuerDiscovery=true",	     
+		"--feature-gates=ServiceAccountIssuerDiscovery=true",
+		"--embed-certs",
 		"-b", bootstrapper,
 	}
 
